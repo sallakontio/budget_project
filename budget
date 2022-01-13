@@ -1,0 +1,35 @@
+# Build a budget calculator!
+# Income data
+income = float(input('Enter your monthly post-tax income €: '))
+additional = float(input('Enter any other income €: '))
+
+total_income = additional + income
+
+print('Your total income next month is ' + str(total_income))
+
+# Expenses data
+
+def gather_expenses():
+    housing = float(input('Monthly housing expense €: '))
+    yel = float(input('Monthly YEL €: '))
+    bills = float(input('Monthly bills €: '))
+    food = float(input('Monthly food €: '))
+    transportation = float(input('Monthly transportation €: '))
+    subscriptions = float(input('Monthly subscriptions €: '))
+    gym = float(input('Monthly gym membership €: '))
+    loan = float(input('Monthly loan payment €: '))
+    savings = float(input('Monthly savings €: '))
+    other = float(input('Other €: '))
+    total_expenses = housing + bills + food + transportation + subscriptions + gym + savings + loan + other
+    return total_expenses
+
+expense_total = gather_expenses()
+print('Your total expense next month is ' + str(expense_total))
+margin = total_income - expense_total
+
+if margin >= 0:
+    print('Your total surplus next month ' + str(margin))
+else:
+    print('You will come up ' + str(margin) + ' neg ')
+
+print("Good job hehe")
